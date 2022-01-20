@@ -11,7 +11,7 @@ use crate::{QueryMarker, SystemId};
 /// on how to call systems outside of an executor, as plain functions.
 pub struct SystemContext<'scope> {
     pub(crate) system_id: Option<SystemId>,
-    pub(crate) world: &'scope World,
+    pub world: &'scope World,
 }
 
 impl<'scope> SystemContext<'scope> {
