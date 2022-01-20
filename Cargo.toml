@@ -1,20 +1,20 @@
 [package]
-name = "yaks"
-version = "0.1.0"
-description = "Minimalistic framework for automatic multithreading of hecs via rayon"
 authors = ["Alexander Sepity <alexander.sepity@gmail.com>"]
-edition = "2018"
-license = "MIT OR Apache-2.0"
-repository = "https://github.com/Ratysz/yaks"
-readme = "README.md"
-keywords = ["hecs", "parallel", "ecs", "entity", "component"]
 categories = ["concurrency", "game-engines"]
+description = "Minimalistic framework for automatic multithreading of hecs via rayon"
+edition = "2018"
+keywords = ["hecs", "parallel", "ecs", "entity", "component"]
+license = "MIT OR Apache-2.0"
+name = "yaks"
+readme = "README.md"
+repository = "https://github.com/Ratysz/yaks"
+version = "0.1.0"
 
 [package.metadata.docs.rs]
 all-features = true
 
 [badges]
-maintenance = { status = "actively-developed" }
+maintenance = {status = "actively-developed"}
 
 [features]
 default = ["parallel"]
@@ -24,13 +24,13 @@ parallel = ["crossbeam-channel", "fixedbitset", "rayon"]
 resources-interop = ["resources"]
 
 [dependencies]
-crossbeam-channel = { version = "0.5.0", optional = true }
-fixedbitset = { version = "0.3.0", optional = true }
-hecs = "0.3.0"
-parking_lot = "0.11.0"
-paste = "1.0.0"
-rayon = { version = "1.3.0", optional = true }
-resources = { version = "1.1.0", features = ["fetch"], optional = true }
+crossbeam-channel = {version = "0.5.2", optional = true}
+fixedbitset = {version = "0.4.1", optional = true}
+hecs = "0.7.5"
+parking_lot = "0.11.2"
+paste = "1.0.6"
+rayon = {version = "1.5.1", optional = true}
+resources = {version = "1.1.0", features = ["fetch"], optional = true}
 
 [dev-dependencies]
-rand = "0.7.3"
+rand = "0.8.4"

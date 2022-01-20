@@ -101,7 +101,7 @@ fn color(
 ) {
     // Of course, it's possible to use resources mutably and still batch queries if
     // mutation happens outside batching.
-    let blue = rng.gen_range(0.0, 1.0);
+    let blue = rng.gen_range(0.0..1.0);
     yaks::batch(
         &mut context.query(query),
         spawned.batch_size_all(),
@@ -154,8 +154,8 @@ fn main() {
     world.spawn_batch((0..(to_spawn / 2)).map(|_| {
         spawned.no_acceleration += 1;
         (
-            Position(rng.gen_range(-100.0, 100.0), rng.gen_range(-100.0, 100.0)),
-            Velocity(rng.gen_range(-1.0, 1.0), rng.gen_range(-1.0, 1.0)),
+            Position(rng.gen_range(-100.0..100.0), rng.gen_range(-100.0..100.0)),
+            Velocity(rng.gen_range(-1.0..1.0), rng.gen_range(-1.0..1.0)),
             Color(0.0, 0.0, 0.0, 1.0),
         )
     }));
@@ -163,9 +163,9 @@ fn main() {
     world.spawn_batch((0..(to_spawn / 2)).map(|_| {
         spawned.with_acceleration += 1;
         (
-            Position(rng.gen_range(-100.0, 100.0), rng.gen_range(-100.0, 100.0)),
-            Velocity(rng.gen_range(-10.0, 10.0), rng.gen_range(-10.0, 10.0)),
-            Acceleration(rng.gen_range(-1.0, 1.0), rng.gen_range(-1.0, 1.0)),
+            Position(rng.gen_range(-100.0..100.0), rng.gen_range(-100.0..100.0)),
+            Velocity(rng.gen_range(-10.0..10.0), rng.gen_range(-10.0..10.0)),
+            Acceleration(rng.gen_range(-1.0..1.0), rng.gen_range(-1.0..1.0)),
             Color(0.0, 0.0, 0.0, 1.0),
         )
     }));
